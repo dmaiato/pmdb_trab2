@@ -36,11 +36,11 @@ CREATE TABLE Vaga (
 
 CREATE TABLE Ocupacao (
     id SERIAL PRIMARY KEY,
-    placa_veiculo CHAR(7) REFERENCES Veiculo(placa),
-    id_vaga VARCHAR(2) REFERENCES Vaga(numero),
     data_hora_entrada TIMESTAMP NOT NULL,
     data_hora_saida TIMESTAMP,
-    valor_pago DECIMAL(10, 2)
+    valor_pago DECIMAL(10, 2),
+    placa_veiculo CHAR(7) REFERENCES Veiculo(placa),
+    id_vaga VARCHAR(2) REFERENCES Vaga(numero)
 );
 
 INSERT INTO Cliente
